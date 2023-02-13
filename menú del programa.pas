@@ -1,69 +1,70 @@
-menú del programa;
-utiliza crt;
+//menú del programa.pas
+uses crt;
 
-constante
-  archivo:string = 'T_estaincias_turisticas';
-tipo
-registro = registro
+BEGIN
+
+begin
+archivo:string = 'T_estaincias_turisticas';
+ tipo
+ registro := registro
      estancias: matriz[1..1000] de registro
      nom_estancia:STRING [60];
      apellidoyNombreD:STRING [60];
-     domicilio:STRING [60];
-     correo electrónico: CADENA [60];
+     domicilio: STRING [60];
+     correo electrónico: STRING [60];
      ESTADO: BOOLEAN;
-fin;
-
-variable
-    tecla : char;
-    reg : array[1..1000] de registro;
-    h, cont : entero;
-    f : archivo de registro;
+end;
 
 
-procedimiento alta(A : entero);
-   comenzar
+  var tecla : char;
+  var reg : array[1..1000] de registro;
+  var h, cont : entero;
+  var f : archivo de registro;
+
+
+procedure alta(A := entero);
+   begin
     escribir;
     writeln('Alta[ Pulse Una Tecla ]');
-    leer la clave;
-    fin;
-
-procedimiento guardar_registros(B : registro);
-  comenzar
+    readln la clave;
+    end;
+end;
+procedure guardar_registros(B := registro);
+  begin
      escribir;
      writeln('guardar_registros [ Pulse Una Tecla ]');
-     leer la clave;
-  fin;
-
-procedimiento carga_registros;
-  comenzar
+     readln la clave;
+  end;
+end;
+procedure carga_registros;
+  begin
       escribir;
       writeln(' carga_registros [ Pulse Una Tecla ]');
-      leer la clave;
-  fin;
-
-  procedimiento presenta_registros;
-  comenzar
+      readln la clave;
+  end;
+end;
+procedure presenta_registros;
+  begin
      escribir;
      writeln('presenta_registros [ Pulse Una Tecla ]');
-     leer la clave;
-  fin;
-
-comenzar
-clrscr;
+     readln la clave;
+  end;
+end;
+begin
+  clrscr;
 	writeln('Ingrese el nombre de la estancia: ');
 	readln(disco.estancia);
 	writeln('Ingrese dueño');
 	readln(disco.autor);
-        writeln('--------Informacion Ingresada--------');
+  writeln('--------Informacion Ingresada--------');
 	writeln('Nombre de la estancia: ',disco.estancia);
 	writeln('Dueño: ',disco.duenios);
 
-fin;
+end;
 
-variable
-opcion:char;
+var opcion:char;
 
-comenzar
+begin
 clrscr;
   writeln('--------Menú Principal---------');
   writeln('-------A-Alta--------');
@@ -72,13 +73,19 @@ clrscr;
   writeln('-------D- Consultar-------');
   writeln('-------S- Salir-------');
   readln(opcion);
-
-  opción de caso de
-	'A': alta;
-	'B': bajo;
-        'C': modificar;
-        'D': consultar;
-        'S': salir;
-		fin;
-	leer la clave;
-	fin.  
+  begin
+    if(opcion:='A'):
+	    writeln ( alta);
+    if(opcion:='B'):
+      writeln(Baja)
+    if(opcion:='C'):
+	    writeln (modificar);
+    if(opcion:='D'):
+	    writeln ( consultar);
+    if(opcion:='S'):
+	    writeln ( salir);
+	end;
+	readln la clave;
+end;	
+  
+END. 
